@@ -15,12 +15,12 @@
 ### Structure
 
 - assets
-  - image -> all images
-  - icons -> all svg images
-- components -> each component has index.js, style.js
-- root -> navigation config for router
-- utils -> for constant variable
-- hooks -> custom hooks
+  - image — all images
+  - icons - all svg images
+- components - each component has index.js, style.js
+- root - navigation config for router
+- utils - for constant variable
+- hooks - custom hooks
 
 ### Installed Libraries:
 
@@ -29,3 +29,7 @@
 - styled-components
 - mui / integrated with sc
 - react-router-dom / 6
+
+### index.css
+
+- main font color "Montserrat".
