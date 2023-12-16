@@ -30,7 +30,7 @@ const navbar = [
       {
         id: `2-1`,
         title: "Barcha Lidlar",
-        path: "/role",
+        path: "/all-lids",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -38,7 +38,7 @@ const navbar = [
       {
         id: `2-2`,
         title: "Birinchi Dars",
-        path: "/hodimlar",
+        path: "/first-class",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],

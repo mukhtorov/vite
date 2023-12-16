@@ -78,6 +78,7 @@ const ProfileImage = styled.img`
 
 type MenuProp = {
   subitem?: string;
+  active?: boolean;
 };
 // Menu Item
 const MenuItemWrapper = styled.div<MenuProp>`
@@ -86,10 +87,16 @@ const MenuItemWrapper = styled.div<MenuProp>`
   padding-left: ${({ subitem }) => subitem && "60px"};
   min-height: 44px;
 
-  color: white;
   overflow: hidden;
   position: relative;
   cursor: pointer;
+
+  color: ${({ active }) => (active ? `var(--activeColor)` : `white`)};
+  background-color: ${({ active }) => (active ? `#253e5f` : ``)};
+  & path {
+    fill: ${({ active }) => (active ? `var(--activeColor)` : `white`)};
+  }
+
   .icon {
     margin-right: 16px;
     width: 20px;
@@ -112,12 +119,16 @@ const MenuItemWrapper = styled.div<MenuProp>`
   user-select: none; /* Standard syntax */
 `;
 
-const ItemWrapper = styled.div`
+type ItemProp = {
+  active?: boolean;
+};
+
+const ItemWrapper = styled.div<ItemProp>`
   display: flex;
   flex-direction: column;
   height: auto;
-  /* max-height: 44px; */
-  /* overflow: hidden; */
+  /* max-height: ${({ active }) => !active && "44px"};
+  overflow: ${({ active }) => !active && "hidden"}; */
 `;
 
 export {
