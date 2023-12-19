@@ -6,16 +6,18 @@ import {
   ProfileName,
 } from "./style";
 
-// const noUserPhoto = lazy(() => import("../../assets/images/noUser.webp"));
 import noUserPhoto from "../../assets/images/noUser.webp";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 export const Profile = () => {
+  const auth = useSelector((state: RootState) => state.auth);
   return (
     <ProfileContainer>
       <ProfileImage alt="no user photo" src={noUserPhoto} />
       <div>
-        <ProfileName>Sardorbek Mukhtorov</ProfileName>
-        <ProfileEmail>sardor.edu@gmail.com</ProfileEmail>
+        <ProfileName>{auth.name}</ProfileName>
+        <ProfileEmail>{auth.email}</ProfileEmail>
       </div>
     </ProfileContainer>
   );

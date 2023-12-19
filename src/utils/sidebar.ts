@@ -8,7 +8,7 @@ import Course from "../assets/icons/course.svg?react";
 import HR from "../assets/icons/hr.svg?react";
 import Settings from "../assets/icons/setting.svg?react";
 
-const navbar = [
+const sidebar = [
   {
     id: 1,
     title: "Analitika",
@@ -30,7 +30,7 @@ const navbar = [
       {
         id: `2-1`,
         title: "Barcha Lidlar",
-        path: "/all-lids",
+        path: "/lidlar/all-lids",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -38,7 +38,7 @@ const navbar = [
       {
         id: `2-2`,
         title: "Birinchi Dars",
-        path: "/first-class",
+        path: "/lidlar/first-class",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -46,7 +46,7 @@ const navbar = [
       {
         id: `2-3`,
         title: "Yangi Talabalar",
-        path: "/new-students",
+        path: "/lidlar/new-students",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -74,7 +74,7 @@ const navbar = [
       {
         id: `4-1`,
         title: "Barcha talabalar",
-        path: "/all-talabalar",
+        path: "/talabalar/all-talabalar",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -82,7 +82,7 @@ const navbar = [
       {
         id: `4-2`,
         title: "Davomat",
-        path: "/davomat",
+        path: "/talabalar/davomat",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -90,7 +90,7 @@ const navbar = [
       {
         id: `4-3`,
         title: "Aktive",
-        path: "/active",
+        path: "/talabalar/active",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -98,7 +98,7 @@ const navbar = [
       {
         id: `4-4`,
         title: "Arxiv",
-        path: "/archive",
+        path: "/talabalar/archive",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -106,7 +106,7 @@ const navbar = [
       {
         id: `4-5`,
         title: "Ota-onalar",
-        path: "/parents",
+        path: "/talabalar/parents",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -125,7 +125,7 @@ const navbar = [
       {
         id: `5-1`,
         title: "Guruhlar",
-        path: "/guruhlar",
+        path: "/guruhlar/guruhlar",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -133,7 +133,7 @@ const navbar = [
       {
         id: `5-2`,
         title: "Dars Jadvali",
-        path: "/jadval",
+        path: "/guruhlar/jadval",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -141,7 +141,7 @@ const navbar = [
       {
         id: `5-3`,
         title: "Xonalar",
-        path: "/xonalar",
+        path: "/guruhlar/xonalar",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -160,7 +160,7 @@ const navbar = [
       {
         id: `6-1`,
         title: "Barcha Kurslar",
-        path: "/all-kurslar",
+        path: "/kurslar/all-kurslar",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -168,7 +168,7 @@ const navbar = [
       {
         id: `6-2`,
         title: "Yo'nalishlar",
-        path: "/yonalish",
+        path: "/kurslar/yonalish",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -187,7 +187,7 @@ const navbar = [
       {
         id: `7-1`,
         title: "Ro'llar",
-        path: "/role",
+        path: "/hr/role",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -195,7 +195,7 @@ const navbar = [
       {
         id: `7-2`,
         title: "Hodimlar",
-        path: "/hodimlar",
+        path: "/hr/hodimlar",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -212,33 +212,33 @@ const navbar = [
     role: ["admin", "manager"],
     children: [
       {
-        id: 8 - 1,
+        id: `8 - 1`,
         title: "Umumiy Sozlamalar",
-        path: "/umumiy",
+        path: "/sozlamalar/umumiy",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
       },
       {
-        id: 8 - 2,
+        id: `8 - 2`,
         title: "Manager",
-        path: "/manager",
+        path: "/sozlamalar/manager",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
       },
       {
-        id: 8 - 3,
+        id: `8 - 3`,
         title: "Mentor",
-        path: "/mentor",
+        path: "/sozlamalar/mentor",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
       },
       {
-        id: 8 - 4,
+        id: `8 - 4`,
         title: "Talaba",
-        path: "/talaba",
+        path: "/sozlamalar/talaba",
         isPrivate: true,
         element: Generics,
         role: ["admin", "manager"],
@@ -247,4 +247,4 @@ const navbar = [
   },
 ];
 
-export default navbar;
+export default sidebar;

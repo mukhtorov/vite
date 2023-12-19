@@ -2,32 +2,48 @@ import styled from "styled-components";
 import Logo from "../../assets/icons/logo.svg?react";
 import arrow from "../../assets/icons/rightArrow.svg?react";
 
-const Arrow = styled(arrow)`
+type ArrowProp = {
+  active?: boolean | string;
+};
+
+const Arrow = styled(arrow)<ArrowProp>`
   display: flex;
   margin-left: auto;
+  transform: ${({ active }) => active === "true" && `rotate(90deg)`};
+  transition: all 0.1s;
 `;
 
 const Container = styled.div`
   display: flex;
 `;
-const MenuWrapper = styled.div`
+const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+const MenuScrollWrapper = styled.div`
+  height: 100vh;
+  overflow: auto;
+  background-color: var(--primaryColor);
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+`;
+
+const MenuWrapper = styled.div`
   width: var(--widthSidebar);
   min-width: var(--widthSidebar);
-  background-color: var(--primaryColor);
   color: white;
-  overflow: hidden;
-  overflow-y: scroll;
-  height: 100vh;
+  /* overflow: hidden;
+  overflow-y: scroll; */
   &::-webkit-scrollbar {
-    width: 5px;
-    color: red;
+    width: 0;
   }
 `;
 
 // headers
 const HeadersContainer = styled.div`
+  background-color: var(--primaryColor);
   display: flex;
   align-items: center;
   font-family: Montserrat;
@@ -38,6 +54,10 @@ const HeadersContainer = styled.div`
   padding: 16px 24px;
   border-bottom: 1px solid rgba(37, 62, 95);
   color: var(--activeColor);
+  z-index: 99999;
+  position: sticky;
+  top: 0;
+  text-transform: uppercase;
 `;
 const HeadersLogo = styled(Logo)`
   width: 48px;
@@ -59,6 +79,11 @@ const ProfileEmail = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 20px; /* 166.667% */
+  /* truncate */
+  width: 165px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 const ProfileName = styled.div`
   color: #f8fafc;
@@ -67,6 +92,12 @@ const ProfileName = styled.div`
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
+
+  /* truncate */
+  width: 165px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const ProfileImage = styled.img`
@@ -78,23 +109,25 @@ const ProfileImage = styled.img`
 
 type MenuProp = {
   subitem?: string;
-  active?: boolean;
+  active?: boolean | string;
 };
 // Menu Item
 const MenuItemWrapper = styled.div<MenuProp>`
   display: flex;
   padding: 12px 24px;
-  padding-left: ${({ subitem }) => subitem && "60px"};
+  padding-left: ${({ subitem }) => subitem === "true" && "60px"};
   min-height: 44px;
 
   overflow: hidden;
   position: relative;
   cursor: pointer;
 
-  color: ${({ active }) => (active ? `var(--activeColor)` : `white`)};
-  background-color: ${({ active }) => (active ? `#253e5f` : ``)};
+  color: ${({ active }) =>
+    active === "true" ? `var(--activeColor)` : `white`};
+  background-color: ${({ active }) => (active === "true" ? `#253e5f` : ``)};
   & path {
-    fill: ${({ active }) => (active ? `var(--activeColor)` : `white`)};
+    fill: ${({ active }) =>
+      active === "true" ? `var(--activeColor)` : `white`};
   }
 
   .icon {
@@ -111,7 +144,7 @@ const MenuItemWrapper = styled.div<MenuProp>`
     }
   }
   &:active {
-    transform: scale(0.99);
+    /* transform: scale(0.99); */
   }
 
   -webkit-user-select: none; /* Safari */
@@ -120,15 +153,15 @@ const MenuItemWrapper = styled.div<MenuProp>`
 `;
 
 type ItemProp = {
-  active?: boolean;
+  active?: boolean | string;
 };
 
 const ItemWrapper = styled.div<ItemProp>`
   display: flex;
   flex-direction: column;
   height: auto;
-  /* max-height: ${({ active }) => !active && "44px"};
-  overflow: ${({ active }) => !active && "hidden"}; */
+  max-height: ${({ active }) => active === "false" && "44px"};
+  overflow: ${({ active }) => active === "false" && "hidden"};
 `;
 
 export {
@@ -143,4 +176,6 @@ export {
   ItemWrapper,
   MenuItemWrapper,
   Arrow,
+  BodyWrapper,
+  MenuScrollWrapper,
 };

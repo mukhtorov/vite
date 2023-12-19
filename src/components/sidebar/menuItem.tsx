@@ -4,7 +4,7 @@ type Props = {
   children: React.ReactNode;
   onClick: () => void;
   subitem?: string;
-  active?: boolean;
+  active?: boolean | string;
 };
 
 export const MenuItem: React.FC<Props> = ({
