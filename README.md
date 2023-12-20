@@ -1,4 +1,4 @@
-# CRM Project for All type of Education centers.
+# This is my coding structure. For HR's can review my code.
 
 # React + TypeScript + Vite + Redux-Toolkit
 
