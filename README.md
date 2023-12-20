@@ -1,4 +1,4 @@
-# This is my coding structure. For HR's can review my code.
+# This repo is for HRs where they can review my code skills and structure.
 
 # React + TypeScript + Vite + Redux-Toolkit
 
