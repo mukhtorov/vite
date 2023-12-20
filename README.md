@@ -21,6 +21,9 @@
 - root - navigation config for router
 - utils - for constant variable
 - hooks - custom hooks
+- views - for each page
+- store - for redux store
+- features - for redux slicers
 
 ### Installed Libraries:
 
